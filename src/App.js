@@ -1,24 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
+// Components
+import Header from './components/Header'
+import Main from './components/Main'
+
 function App() {
+
+  const headerContent = {
+    title: 'Hello World',
+    description: 'This is a description',
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+        {/* Using spread operator to pass contents of object as props */}
+        <Header {...headerContent} />
+
+        {/* Manual passing of variables as props */}
+        <Main greeting="Hi this is a prop passed from app.js" numberGiven={3} />
     </div>
   );
 }

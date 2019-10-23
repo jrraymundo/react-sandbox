@@ -1,0 +1,9 @@
+SUMMARY:
+
+In this practice project the following were learned and practiced:
+
+	1. Use of Spread operator to pass arrays as props to a component
+	2. How to use class components (States, Props, This, Super, Constructor, Handlers, Render)
+	3. Using .map to use/manipulate/display each of an array's content
+	4. Passing down strings and even handlers as custom props to a child component
+	5. Making use of props.children to pass down elements and components to a child component
