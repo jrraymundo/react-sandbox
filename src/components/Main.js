@@ -35,13 +35,17 @@ class Main extends React.Component {
 		}
 
 		numberHandler = (e) => {
-			let newNumber = parseInt(document.getElementById('theNumber').innerHTML) + 1
+			let newNumber = parseInt(document.querySelector('#theNumber').innerHTML) + 1
 			// let newNumber = this.state.numberContent.number3 + 1 // <- Alternative
 			this.setState({
 				numberContent: {
+					...this.state.numberContent,
 					number3: newNumber
 				}
 			})
+			// NOTE:
+			// Since we only want to reassign a value to number3 of numberContent state, we need to use spread operator for all its original contents FIRST
+			// And then assign the new state so that we avoid overwriting all of the properties of that state which we don't intend to touch
 		}
 	//
 
@@ -59,8 +63,12 @@ class Main extends React.Component {
 					numberGiven={this.state.numberContent.number3} 
 				/>
 
-				{/* If you dont self-close the component, anything that you put between the opening and closing tag of the component will be sent as props.children */}
-				<List>
+				{/* 
+					If you dont self-close the component, anything that you put between the opening and closing tag of the component will be sent as props.children 
+				*/}
+				<List
+					numberContent = {this.state.numberContent}
+				>
 					<p>This p element will be passed as a props.children</p>
 				</List>
 			</div>

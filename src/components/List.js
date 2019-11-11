@@ -2,10 +2,19 @@ import React from 'react';
 
 const List = (props) => {
 
+	console.log(props)
 	const listContents = ['uno', 'dos', 'tres']
+	let theNumberContents = []
+
+	for(let key in props.numberContent) {
+		theNumberContents.push(props.numberContent[key])
+	}
 	
+	console.log(theNumberContents)
+
 	return(
 		<div>
+			<p>UnoDosTres:</p>
 			<ul>
 				{
 					// Using map to render contents of an array in JSX
@@ -13,6 +22,13 @@ const List = (props) => {
 					listContents.map((value, index) => {
 						return <li key={index}>{value}</li>
 					})
+				}
+			</ul>
+
+			<p>numberContentProps:</p>
+			<ul>
+				{
+					theNumberContents.map((value, index) => <li key={index}>{value}</li>)
 				}
 			</ul>
 
