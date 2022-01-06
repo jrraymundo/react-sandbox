@@ -10,6 +10,7 @@ import './App.css';
 import Header from './components/react-fundamentals/Header'
 import Main from './components/react-fundamentals/Main'
 import CssGrid from './components/css-grid'
+import InfiniteScroll from './components/infinite-scrolling'
 
 function App() {
   const headerContent = {
@@ -35,6 +36,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomeComponent />} />
         <Route path="/grid" element={<CssGrid />} />
+        <Route path="/infinite-scroll" element={<InfiniteScroll />} />
       </Routes>
     </BrowserRouter>
   )
